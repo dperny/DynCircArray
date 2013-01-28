@@ -76,14 +76,13 @@ class DCArray:
         """removes and returns the value at index"""
         if(self.isEmpty() == True):
             raise SizeError("array is empty")
-        elif(self._size <= self._capacity):
+        elif(self._size <= self._capacity/4):
             self._shrink()
 
         self._verifyIndex(index)
         rval = self.get(index)
         self.set(index,0)
         for i in range(index,self._size-1,1):
-            print(i)
             self.set(i,self.get(i+1))
         i = index
         self._size -= 1

@@ -3,7 +3,7 @@ from dcarray import *
 def main():
 
 	print("This is the data structures testing tool")
-	size = ("input the size of the data structure: ")
+	size = input("input the size of the data structure: ")
 	x = DCArray(int(size))
 
 	#options block. shows commands
@@ -27,7 +27,7 @@ def main():
 			print("\tbr to remove from back\n\tfr to remove from front")
 			print("\tir to remove from index\n\te to extract")
 			print("\tie for isEmpty\n\tif for isFull")
-			print("\ts for size\n\tr for repeat last command")
+			print("\tsi for size\n\traw to view raw store\n\tr for repeat last command")
 			print("\t_F to toggle sequential (quick) data\n\tq to quit")
 			continue
 
@@ -77,10 +77,10 @@ def main():
 
 		# datum is i (increment i each time) if sequential mode is on
 		# else get user input
-		datum = (lambda x: i += i) if FLAG else input("input datum: ")
+		if FLAG: datum = i; i += 1
+		else: datum = input("input datum: ")
 
-
-		if(operation == "s"):
+		if(operation == "si"):
 			index = int(input("index: "))
 			try:
 				x.set(index,datum)
