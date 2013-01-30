@@ -10,7 +10,7 @@ def teststack():
     while(operation != "q"):
 
         op = input("input operation: ")
-        operation = operation if (op == "r" or "") else op
+        operation = operation if (op == "") else op
 
         if(operation == "_F"):
             FLAG = not FLAG
@@ -42,11 +42,11 @@ def teststack():
 
         elif(operation == "pe"):
             try: print(x.peek())
-            except SizeError: print("stack is empty")
+            except IndexError: print("stack is empty")
 
         elif(operation == "pu"):
             if FLAG: datum = i; i += 1
-            else: datum = input("input datum: ")
+            else: datum = eval(input("input datum: "))
             x.push(datum)
 
         else:
@@ -71,7 +71,7 @@ class stack(object):
         return self._store.frontremove()
 
     def peek(self):
-        return self._store.get(self._size-1)
+        return self._store.get(0)
 
     def size(self):
         return self._size
