@@ -71,16 +71,19 @@ def main():
 			print("array is full") if x.isFull() else print("array not full")
 			continue
 
-		elif(operation == "s"):
+		elif(operation == "si"):
 			print("size of the array is {0}".format(x.size()))
 			continue
+
+		elif(operation == "raw"):
+			print(x.display)
 
 		# datum is i (increment i each time) if sequential mode is on
 		# else get user input
 		if FLAG: datum = i; i += 1
 		else: datum = input("input datum: ")
 
-		if(operation == "si"):
+		if(operation == "s"):
 			index = int(input("index: "))
 			try:
 				x.set(index,datum)

@@ -117,8 +117,8 @@ class DCArray:
         """returns the capacity of the array"""
         return self._capacity
 
-
-
+    def display(self):
+        return self._store
 
     #######################################################
     #            private functions below here             #
