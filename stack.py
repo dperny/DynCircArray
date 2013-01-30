@@ -11,6 +11,8 @@ class stack(object):
         size =+ 1
 
     def pop(self):
+        if(self.isEmpty())
+            return SizeError("stack is empty")
         self._size -= 1
         return self._store.frontremove()
 
@@ -19,6 +21,12 @@ class stack(object):
 
     def size(self):
         return self._size
+
+    def isEmpty(self):
+        if(self._size == 0):
+            return True
+        else:
+            return False
 
     def visualize(self):
         return self.store.extract()
