@@ -3,7 +3,7 @@ from dcarray import *
 class Queue(object):
     """docstring for Queue"""
     def __init__(self):
-        self._store = DCArray(4):
+        self._store = DCArray(4)
         self._size = 0
 
     def enqueue(self,value):
