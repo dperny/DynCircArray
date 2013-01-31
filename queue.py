@@ -75,7 +75,7 @@ class queue(object):
         return self._store.get(0)
 
     def size(self):
-        return self._size()
+        return self._size
 
     def isEmpty(self):
         if(self._size == 0):
